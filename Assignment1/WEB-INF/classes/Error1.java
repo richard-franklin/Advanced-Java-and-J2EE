@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class search
+ * Servlet implementation class error
  */
-@WebServlet("/search")
-public class search extends HttpServlet {
+@WebServlet("/error")
+public class error extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public search() {
+    public error() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,10 +29,19 @@ public class search extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String name=request.getParameter("name");
+		String s = "admin";
+		String un=request.getParameter("name1");
+		int e = 406;
+		PrintWriter pw = response.getWriter();
+		if (s.equals(un)){
+			pw.println("<h1>you are admin!!!!!!!!!!</h1>");
+			
+		}
+		else{
+			response.sendError(e, "error!!!");
+//			response.sendError(e);
+		}
 		
-        response.sendRedirect("https://www.google.co.in/search?q="+name);  
 	}
 
 	/**
