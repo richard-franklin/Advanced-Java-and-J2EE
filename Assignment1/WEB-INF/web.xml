@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>Searcher</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Error1</servlet-name>
+        <servlet-class>Error1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Error2</servlet-name>
+        <servlet-class>Error2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>Search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Error1</servlet-name>
+        <url-pattern>Error1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Error2</servlet-name>
+        <url-pattern>Error2</url-pattern>
+    </servlet-mapping>
+</web-app>
